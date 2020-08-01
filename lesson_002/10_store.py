@@ -34,11 +34,12 @@ store = {
 # Рассчитать на какую сумму лежит каждого товара на складе
 # например для ламп
 
-lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
-
-
-print('Лампа -', store[goods['Лампа']][0]['quantity'], 'шт, стоимость', lamps_cost, 'руб')
+link_lamps = store[goods['Лампа']]
+lamps_cost = link_lamps[0]['quantity'] * link_lamps[0]['price']
+print('Лампа -', link_lamps[0]['quantity'], 'шт, стоимость', lamps_cost, 'руб')
 # или проще (/сложнее ?)
+
+
 lamp_code = goods['Лампа']
 lamps_item = store[lamp_code][0]
 lamps_quantity = lamps_item['quantity']
@@ -56,25 +57,25 @@ lamps_cost = lamps_quantity * lamps_price
 # Это задание на ручное вычисление - что бы потом понять как работают циклы и насколько с ними проще жить.
 
 
-# TODO, Илья, ответ верный, давайте поработаем над стилем.
-#  Прадлагаю для store[goods['Стол']] и т.д. придумать переменные и использовать их в вычислениях,
-#  в таком случае, кода станет меньше. И пропадёт большое кол-во [[[]]].
 
-table_cost_1 = store[goods['Стол']][0]['quantity'] * store[goods['Стол']][0]['price']
-table_cost_2 = store[goods['Стол']][1]['quantity'] * store[goods['Стол']][1]['price']
-table_quantity = store[goods['Стол']][0]['quantity'] + store[goods['Стол']][1]['quantity']
+link_table = store[goods['Стол']]
+table_cost_1 = link_table[0]['quantity'] * link_table[0]['price']
+table_cost_2 = link_table[1]['quantity'] * link_table[1]['price']
+table_quantity = link_table[0]['quantity'] + link_table[1]['quantity']
 table_cost = table_cost_1 + table_cost_2
 
-chair_cost_1 = store[goods['Стул']][0]['quantity'] * store[goods['Стул']][0]['price']
-chair_cost_2 = store[goods['Стул']][1]['quantity'] * store[goods['Стул']][1]['price']
-chair_cost_3 = store[goods['Стул']][2]['quantity'] * store[goods['Стул']][2]['price']
-chair_quantity_1 = store[goods['Стул']][0]['quantity'] + store[goods['Стул']][1]['quantity']
-chair_quantity = chair_quantity_1 + store[goods['Стул']][2]['quantity']
+link_chair = store[goods['Стул']]
+chair_cost_1 = link_chair[0]['quantity'] * link_chair[0]['price']
+chair_cost_2 = link_chair[1]['quantity'] * link_chair[1]['price']
+chair_cost_3 = link_chair[2]['quantity'] * link_chair[2]['price']
+chair_quantity_1 = link_chair[0]['quantity'] + link_chair[1]['quantity']
+chair_quantity = chair_quantity_1 + link_chair[2]['quantity']
 chair_cost = chair_cost_1 + chair_cost_2 + chair_cost_3
 
-sofa_cost_1 = store[goods['Диван']][0]['quantity'] * store[goods['Диван']][0]['price']
-sofa_cost_2 = store[goods['Диван']][1]['quantity'] * store[goods['Диван']][1]['price']
-sofa_quantity = store[goods['Диван']][0]['quantity'] + store[goods['Диван']][1]['quantity']
+link_sofa = store[goods['Диван']]
+sofa_cost_1 = link_sofa[0]['quantity'] * link_sofa[0]['price']
+sofa_cost_2 = link_sofa[1]['quantity'] * link_sofa[1]['price']
+sofa_quantity = link_sofa[0]['quantity'] + link_sofa[1]['quantity']
 sofa_cost = sofa_cost_1 + sofa_cost_2
 
 print('Стол -', table_quantity, 'шт, стоимость', table_cost, 'руб')

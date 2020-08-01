@@ -32,13 +32,11 @@ secret_message = [
 #   слова, идущее в обратном порядке, нужно получить за 1 срез (используя отрицательный шаг)
 #   Если нужны вычисления и разные пробы - делайте это в консоли пайтона, тут нужен только результат
 
-first = (secret_message[0][3])  # TODO () лишние
+first = (secret_message[0][3])  #
 second = (secret_message[1][9:13])
 third = (secret_message[2][5:15:2])
 fourth = (secret_message[3][12:6:-1])
 fifth = (secret_message[4][20:15:-1])
-secret_message = first + " " + second + " " + third + " " + fourth + " " + fifth
-# TODO, Всё верно, Но, давайте просто попробуем передать в print наши переменные через запятую.
-#  Посмотрим, как отработается код.
+# secret_message = first + " " + second + " " + third + " " + fourth + " " + fifth
 
-print(secret_message)
+print(first, second, third, fourth, fifth)

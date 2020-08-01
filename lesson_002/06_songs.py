@@ -21,26 +21,16 @@ violator_songs = [
 # где a, это число которое надо округлить, а b количество знаков после запятой
 # более подробно про функцию round смотрите в документации https://docs.python.org/3/search.html?q=round
 
-first_song_time = violator_songs[3][1]
-first_song_time = round(first_song_time, 2)
-
-second_song_time = violator_songs[5][1]
-second_song_time = round(second_song_time, 2)
-
-third_song_time = violator_songs[-1][1]
-third_song_time = round(third_song_time, 2)
-
 # Или лучше так. В одно действие с 1 переменной =)
+# Cогласен))
+
 example_all_song = round(
     violator_songs[3][1]
     + violator_songs[5][1]
     + violator_songs[-1][1]
     , 2)
 
-time = first_song_time + second_song_time + third_song_time
-time = round(time, 2)
-
-print('Три песни звучат', time, 'минут')
+print('Три песни звучат', example_all_song, 'минут')
 
 # Есть словарь песен группы Yellow со временем звучания с точностью до долей минут
 pocket_universe_songs = {
@@ -69,9 +59,8 @@ second_song_time = round(second_song_time, 2)
 third_song_time = pocket_universe_songs['Beyond Mirrors']
 third_song_time = round(third_song_time, 2)
 
-time = first_song_time + second_song_time + third_song_time
+time = round(first_song_time + second_song_time + third_song_time, 0)
 
 print('А другие три песни звучат приблизительно', time, 'минут')
-# TODO, Илья, пожалуйста, обратите внимание, в последнем print необходимо округлить с помощь round до целых.
 # Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
