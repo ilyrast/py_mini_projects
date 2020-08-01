@@ -26,3 +26,5 @@ print(zoo)
 position_lion = zoo.index('lion') + 1
 position_lark = zoo.index('lark') + 1
 print(position_lion, position_lark)
+
+# зачёт!

@@ -44,3 +44,5 @@ print(radius > dist_point_2)
 # 77777.7777
 # False
 # False
+
+# зачёт!

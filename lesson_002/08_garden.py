@@ -17,7 +17,7 @@ print(set.union(garden_set, meadow_set))
 
 # выведите на консоль те, которые растут и там и там
 
-print(set.intersection(garden_set,meadow_set))
+print(set.intersection(garden_set, meadow_set))
 
 # выведите на консоль те, которые растут в саду, но не растут на лугу
 
@@ -26,3 +26,5 @@ print(set.difference(garden_set, meadow_set))
 # выведите на консоль те, которые растут на лугу, но не растут в саду
 
 print(set.difference(meadow_set, garden_set))
+
+# зачёт!

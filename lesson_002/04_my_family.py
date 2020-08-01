@@ -6,7 +6,6 @@
 # моя семья (минимум 3 элемента, есть еще дедушки и бабушки, если что)
 my_family = ['father', 'mother', 'gr_father', 'gr_mother']
 
-
 # список списков приблизителного роста членов вашей семьи
 my_family_height = [
     ['father', '190'],
@@ -28,3 +27,5 @@ gr_father = my_family_height[2][1]
 summary_height = int(father_height) + int(mother_height) + int(gr_father)
 
 print('Общий рост семьи -', summary_height, 'см')
+
+# зачёт!
