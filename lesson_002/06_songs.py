@@ -59,8 +59,11 @@ second_song_time = round(second_song_time, 2)
 third_song_time = pocket_universe_songs['Beyond Mirrors']
 third_song_time = round(third_song_time, 2)
 
-time = round(first_song_time + second_song_time + third_song_time, 0)
-
+# time = round(first_song_time + second_song_time + third_song_time, 0)
+# Илья, пожалуйста, обратите внимание, лучше так.
+time = round(first_song_time + second_song_time + third_song_time)
 print('А другие три песни звучат приблизительно', time, 'минут')
 # Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
+
+# зачёт!
