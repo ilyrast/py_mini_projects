@@ -10,7 +10,7 @@
 # Результат проверки вывести на консоль (ДА/НЕТ)
 # Использовать только операторы if/elif/else, можно вложенные
 
-# envelop_x, envelop_y = 10, 7
+envelop_x, envelop_y = 10, 7
 # # paper_x, paper_y = 8, 9
 # # проверить для
 # # paper_x, paper_y = 9, 8
