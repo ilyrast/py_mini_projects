@@ -12,3 +12,11 @@
 educational_grant, expenses = 10000, 12000
 
 # TODO здесь ваш код
+count = 1
+bonus = 0
+while count != 10:
+    bonus = expenses - educational_grant + bonus
+    expenses = expenses * 1.03
+    count += 1
+
+print("Студенту надо попросить", round(bonus), "рублей")
