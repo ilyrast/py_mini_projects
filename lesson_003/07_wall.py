@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 
 # (цикл for)
-import simple_draw
+import simple_draw as sd
 
+sd.resolution = (1200, 600)
 # Нарисовать стену из кирпичей. Размер кирпича - 100х50
 # Использовать вложенные циклы for
 
 # TODO здесь ваш код
+point_low = sd.get_point(0, 550)
+point_high = sd.get_point(100, 600)
+sd.rectangle( point_low, point_high, color=sd.COLOR_YELLOW, width=0)
 # Подсказки:
 #  Для отрисовки кирпича использовать функцию rectangle
 #  Алгоритм должен получиться приблизительно такой:
@@ -17,4 +21,4 @@ import simple_draw
 #           вычисляем правый нижний и левый верхний углы кирпича
 #           рисуем кирпич
 
-simple_draw.pause()
+sd.pause()
