@@ -21,7 +21,7 @@ envelop_x, envelop_y = 10, 7
 paper_x, paper_y = 9, 11
 # (просто раскоментировать нужную строку и проверить свой код)
 
-# TODO здесь ваш код
+#  здесь ваш код
 if envelop_x >= paper_x or envelop_x >= paper_y:
     if envelop_y >= paper_y:
         print("ДА")
@@ -59,7 +59,7 @@ brick_x, brick_y, brick_z = 11, 10, 2
 # brick_x, brick_y, brick_z = 3, 11, 6
 # (просто раскоментировать нужную строку и проверить свой код)
 
-# TODO здесь ваш код
+#  здесь ваш код
 if hole_x >= brick_x or hole_x >= brick_y or hole_x >= brick_z:
     if hole_x >= brick_x and hole_y >= brick_y:
         print("ДА")
@@ -76,3 +76,4 @@ if hole_x >= brick_x or hole_x >= brick_y or hole_x >= brick_z:
     else:
         print("НЕТ")
 
+# TODO, давайте попробуем решить без исльзования вложенных условных операторов =)

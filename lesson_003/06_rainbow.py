@@ -35,3 +35,5 @@ for i in range(0, 7):
     sd.circle(center_position=point, radius=400, color=color, width=30)
     y += 30
 sd.pause()
+
+# зачёт!
