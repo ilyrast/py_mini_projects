@@ -55,3 +55,15 @@ store = {
 #     вывод на консоль количества и стоимости товара на складе
 
 # TODO здесь ваш код
+
+for good in goods:
+    id_item = goods.get(good)
+    quantity = 0
+    price = 0
+    good_list = store.get(id_item)
+    for obj in good_list:
+        quantity = obj.get('quantity') + quantity
+        price = obj.get('price') + price
+    print (good, "-", quantity, "шт", "стоимость", price, "руб")
+
+
