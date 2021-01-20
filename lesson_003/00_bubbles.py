@@ -36,5 +36,6 @@ def bubble(point, radius, color):
 
 for _ in range(100):
     point = sd.random_point()
-    bubble(point=point, radius=50, color=sd.COLOR_RED)
+    color = sd.random_color()
+    bubble(point=point, radius=50, color=color)
 sd.pause()
