@@ -17,8 +17,8 @@ def bubble(point, radius, color):
     sd.circle(center_position=point, radius=radius, color=color)
 
 
-# point = sd.get_point(100, 100)
-# bubble(point=point, radius=50, color=sd.COLOR_RED)
+point = sd.get_point(100, 100)
+bubble(point=point, radius=50, color=sd.COLOR_RED)
 
 # Нарисовать 10 пузырьков в ряд
 for x in range(100, 1001, 100):
