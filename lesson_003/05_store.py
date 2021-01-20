@@ -59,11 +59,13 @@ store = {
 for good in goods:
     id_item = goods.get(good)
     quantity = 0
-    price = 0
+    sum = 0
     good_list = store.get(id_item)
     for obj in good_list:
-        quantity = obj.get('quantity') + quantity
-        price = obj.get('price') + price
-    print (good, "-", quantity, "шт", "стоимость", price, "руб")
+        quantity_obj = obj.get('quantity')
+        price = obj.get('price') * quantity_obj
+        quantity = quantity_obj + quantity
+        sum += price
+    print(good, "-", quantity, "шт", "стоимость", sum, "руб")
 
 
