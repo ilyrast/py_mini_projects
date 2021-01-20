@@ -28,8 +28,8 @@ if envelop_x >= paper_x or envelop_x >= paper_y:
     else:
         if envelop_y >= paper_x:
             print("ДА")
-        else:
-            print("НЕТ")
+else:
+    print("НЕТ")
 
 
 # Усложненное задание, решать по желанию.
