@@ -12,7 +12,7 @@
 educational_grant, expenses = 10000, 12000
 
 #  здесь ваш код
-count = 1
+count = 0
 bonus = 0
 
 # TODO, пока что делаем на 1 итерацию цикла меньше =)
