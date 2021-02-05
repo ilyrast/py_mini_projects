@@ -19,21 +19,32 @@ print('Вы ввели', month)
 
 
 #  здесь ваш код
-if 1 <= month <= 7:
-    if month == 2:
-        print("В этом месяце 28 дней")
-    else:
-        if month % 2 == 0:
-            print("В этом месяце 30 дней")
-        else:
-            print("В этом месяце 31 дней")
-elif 8 <= month <= 12:
-    if month % 2 == 0:
-        print("В этом месяце 31 дней")
-    else:
-        print("В этом месяце 30 дней")
-else:
-    print("Неверное значение месяца")
+# if 1 <= month <= 7:
+#     if month == 2:
+#         print("В этом месяце 28 дней")
+#     else:
+#         if month % 2 == 0:
+#             print("В этом месяце 30 дней")
+#         else:
+#             print("В этом месяце 31 дней")
+# elif 8 <= month <= 12:
+#     if month % 2 == 0:
+#         print("В этом месяце 31 дней")
+#     else:
+#         print("В этом месяце 30 дней")
+# else:
+#     print("Неверное значение месяца")
 
+list_for_1 = [1, 3, 5, 7, 8, 10, 12]
+list_for_0 = [4, 6, 9, 11]
+
+if month in list_for_0:
+    print("В этом месяце 30 день")
+elif month in list_for_1:
+    print("В этом месяце 31 дней")
+elif month == 2:
+    print("В этом месяце 28 дней")
+else:
+    print("Введите корректный номер месяца")
 
 
