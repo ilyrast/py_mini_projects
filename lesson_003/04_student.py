@@ -15,7 +15,7 @@ educational_grant, expenses = 10000, 12000
 count = 0
 bonus = 0
 
-# TODO, пока что делаем на 1 итерацию цикла меньше =)
+# , пока что делаем на 1 итерацию цикла меньше =)
 
 while count != 10:
     bonus = expenses - educational_grant + bonus
@@ -23,3 +23,5 @@ while count != 10:
     count += 1
 
 print("Студенту надо попросить", round(bonus), "рублей")
+
+# зачёт!

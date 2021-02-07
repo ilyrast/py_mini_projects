@@ -56,9 +56,7 @@ store = {
 
 #  здесь ваш код
 
-# TODO, предлагаю попробовать в первом цикле по словарю идти с items =)
-
-
+# , предлагаю попробовать в первом цикле по словарю идти с items =)
 for items in goods:
     id_item = goods.get(items)
     quantity = 0
@@ -71,4 +69,4 @@ for items in goods:
         sum += price
     print(items, "-", quantity, "шт", "стоимость", sum, "руб")
 
-
+# зачёт!

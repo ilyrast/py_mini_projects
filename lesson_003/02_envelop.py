@@ -38,8 +38,6 @@ elif envelop_x >= paper_y and envelop_y >= paper_x:
 else:
     print("НЕТ")
 
-
-
 # Усложненное задание, решать по желанию.
 # Заданы размеры hole_x, hole_y прямоугольного отверстия и размеры brick_х, brick_у, brick_z кирпича (все размеры
 # могут быть в диапазоне от 1 до 1000)
@@ -84,7 +82,7 @@ brick_x, brick_y, brick_z = 3, 5, 6
 #     else:
 #         print("НЕТ")
 
-# TODO, давайте попробуем решить без исльзования вложенных условных операторов =)
+# , давайте попробуем решить без исльзования вложенных условных операторов =)
 
 if hole_x >= brick_x and hole_y >= brick_y:  # xy
     print("ДА")
@@ -100,3 +98,5 @@ elif hole_x >= brick_z and hole_y >= brick_y:  # zy
     print("ДА")
 else:
     print("НЕТ")
+
+# зачёт!

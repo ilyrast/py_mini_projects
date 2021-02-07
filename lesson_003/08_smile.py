@@ -12,7 +12,7 @@ sd.resolution = (1200, 600)
 # Вывести 10 смайликов в произвольных точках экрана.
 
 
-# TODO, пожалуйста, реализуйте функцию Смайлик =)
+# , пожалуйста, реализуйте функцию Смайлик =)
 
 def smile(x_coord, y_coord, color):
     point_main = sd.get_point(x_coord, y_coord)
@@ -38,3 +38,5 @@ for _ in range(10):
     smile(x_coord, y_coord, color=color)
 
 sd.pause()
+
+# зачёт!
