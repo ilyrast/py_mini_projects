@@ -11,25 +11,33 @@
 # Использовать только операторы if/elif/else, можно вложенные
 
 envelop_x, envelop_y = 10, 7
-# # paper_x, paper_y = 8, 9
-# # проверить для
-# # paper_x, paper_y = 9, 8
-# # paper_x, paper_y = 6, 8
-# # paper_x, paper_y = 8, 6
-# # paper_x, paper_y = 3, 4
-# # paper_x, paper_y = 11, 9
-paper_x, paper_y = 9, 11
+paper_x, paper_y = 8, 9
+# проверить для
+# paper_x, paper_y = 9, 8
+# paper_x, paper_y = 6, 8
+# paper_x, paper_y = 8, 6
+# paper_x, paper_y = 3, 4
+# paper_x, paper_y = 11, 9
+# paper_x, paper_y = 9, 11
 # (просто раскоментировать нужную строку и проверить свой код)
 
-# TODO здесь ваш код
-if envelop_x >= paper_x or envelop_x >= paper_y:
-    if envelop_y >= paper_y:
-        print("ДА")
-    else:
-        if envelop_y >= paper_x:
-            print("ДА")
+#  здесь ваш код
+# if envelop_x >= paper_x or envelop_x >= paper_y:
+#     if envelop_y >= paper_y:
+#         print("ДА")
+#     else:
+#         if envelop_y >= paper_x:
+#             print("ДА")
+# else:
+#     print("НЕТ")
+
+if envelop_x >= paper_x and envelop_y >= paper_y:
+    print("ДА")
+elif envelop_x >= paper_y and envelop_y >= paper_x:
+    print("ДА")
 else:
     print("НЕТ")
+
 
 
 # Усложненное задание, решать по желанию.
@@ -39,13 +47,13 @@ else:
 # Определить, пройдет ли кирпич через отверстие (грани кирпича параллельны сторонам отверстия)
 
 hole_x, hole_y = 8, 9
-brick_x, brick_y, brick_z = 11, 10, 2
+# brick_x, brick_y, brick_z = 11, 10, 2
 # brick_x, brick_y, brick_z = 11, 2, 10
 # brick_x, brick_y, brick_z = 10, 11, 2
 # brick_x, brick_y, brick_z = 10, 2, 11
 # brick_x, brick_y, brick_z = 2, 10, 11
 # brick_x, brick_y, brick_z = 2, 11, 10
-# brick_x, brick_y, brick_z = 3, 5, 6
+brick_x, brick_y, brick_z = 3, 5, 6
 # brick_x, brick_y, brick_z = 3, 6, 5
 # brick_x, brick_y, brick_z = 6, 3, 5
 # brick_x, brick_y, brick_z = 6, 5, 3
@@ -59,20 +67,36 @@ brick_x, brick_y, brick_z = 11, 10, 2
 # brick_x, brick_y, brick_z = 3, 11, 6
 # (просто раскоментировать нужную строку и проверить свой код)
 
-# TODO здесь ваш код
-if hole_x >= brick_x or hole_x >= brick_y or hole_x >= brick_z:
-    if hole_x >= brick_x and hole_y >= brick_y:
-        print("ДА")
-    elif hole_x >= brick_y and hole_y >= brick_x:
-        print("ДА")
-    elif hole_x >= brick_x and hole_y >= brick_z:
-        print ("ДА")
-    elif hole_x >= brick_z and hole_y >= brick_x:
-        print ("ДА")
-    elif hole_x >= brick_y and hole_y >= brick_z:
-        print("ДА")
-    elif hole_x >= brick_z and hole_y >= brick_y:
-        print("ДА")
-    else:
-        print("НЕТ")
+#  здесь ваш код
+# if hole_x >= brick_x or hole_x >= brick_y or hole_x >= brick_z:
+#     if hole_x >= brick_x and hole_y >= brick_y:
+#         print("ДА")
+#     elif hole_x >= brick_y and hole_y >= brick_x:
+#         print("ДА")
+#     elif hole_x >= brick_x and hole_y >= brick_z:
+#         print ("ДА")
+#     elif hole_x >= brick_z and hole_y >= brick_x:
+#         print ("ДА")
+#     elif hole_x >= brick_y and hole_y >= brick_z:
+#         print("ДА")
+#     elif hole_x >= brick_z and hole_y >= brick_y:
+#         print("ДА")
+#     else:
+#         print("НЕТ")
 
+# TODO, давайте попробуем решить без исльзования вложенных условных операторов =)
+
+if hole_x >= brick_x and hole_y >= brick_y:  # xy
+    print("ДА")
+elif hole_x >= brick_y and hole_y >= brick_x:  # yx
+    print("ДА")
+elif hole_x >= brick_x and hole_y >= brick_z:  # xz
+    print("ДА")
+elif hole_x >= brick_z and hole_y >= brick_x:  # zx
+    print("ДА")
+elif hole_x >= brick_y and hole_y >= brick_z:  # yz
+    print("ДА")
+elif hole_x >= brick_z and hole_y >= brick_y:  # zy
+    print("ДА")
+else:
+    print("НЕТ")

@@ -54,10 +54,13 @@ store = {
 #         подсчет стоимости товара
 #     вывод на консоль количества и стоимости товара на складе
 
-# TODO здесь ваш код
+#  здесь ваш код
 
-for good in goods:
-    id_item = goods.get(good)
+# TODO, предлагаю попробовать в первом цикле по словарю идти с items =)
+
+
+for items in goods:
+    id_item = goods.get(items)
     quantity = 0
     sum = 0
     good_list = store.get(id_item)
@@ -66,6 +69,6 @@ for good in goods:
         price = obj.get('price') * quantity_obj
         quantity = quantity_obj + quantity
         sum += price
-    print(good, "-", quantity, "шт", "стоимость", sum, "руб")
+    print(items, "-", quantity, "шт", "стоимость", sum, "руб")
 
 

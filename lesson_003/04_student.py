@@ -11,9 +11,12 @@
 
 educational_grant, expenses = 10000, 12000
 
-# TODO здесь ваш код
-count = 1
+#  здесь ваш код
+count = 0
 bonus = 0
+
+# TODO, пока что делаем на 1 итерацию цикла меньше =)
+
 while count != 10:
     bonus = expenses - educational_grant + bonus
     expenses = expenses * 1.03
