@@ -2,6 +2,7 @@
 
 import simple_draw as sd
 
+sd.resolution = (1200, 600)
 # Часть 1.
 # Написать функции рисования равносторонних геометрических фигур:
 # - треугольника
@@ -36,7 +37,46 @@ import simple_draw as sd
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
-# TODO здесь ваш код
+point_triangle = sd.get_point(100, 150)
+point_squad = sd.get_point(600, 150)
+point_pentagon = sd.get_point(100, 400)
+point_hexagon = sd.get_point(600, 400)
+
+
+def triangle(point, angle, length):
+    new_point = point
+    for angle in range(angle + 0, angle + 361, 120):
+        v = sd.get_vector(start_point=new_point, angle=angle, length=length, width=3)
+        v.draw()
+        new_point = v.end_point
+
+def square(point, angle, length):
+    new_point = point
+    for angle in range(angle + 0, angle + 361, 90):
+        v = sd.get_vector(start_point=new_point, angle=angle, length=length, width=3)
+        v.draw()
+        new_point = v.end_point
+
+def pentagon(point, angle, length):
+    new_point = point
+    for angle in range(angle + 0, angle + 361, 72):
+        v = sd.get_vector(start_point=new_point, angle=angle, length=length, width=3)
+        v.draw()
+        new_point = v.end_point
+
+def hexagon(point, angle, length):
+    new_point = point
+    for angle in range(angle + 0, angle + 361, 60):
+        v = sd.get_vector(start_point=new_point, angle=angle, length=length, width=3)
+        v.draw()
+        new_point = v.end_point
+
+
+triangle(point=point_triangle, angle=0, length=100)
+square(point=point_squad, angle=0, length=100)
+pentagon(point=point_pentagon, angle=0, length=100)
+hexagon(point_hexagon, angle=0, length=100)
+
 
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.
