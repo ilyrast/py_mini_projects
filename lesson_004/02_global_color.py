@@ -53,7 +53,8 @@ def hexagon(point, angle, length, color):
         v.draw(color=color)
         new_point = v.end_point
 
-
+# TODO, предлагаю объединить словарь и список в один массив.
+#  Ключём будет ввод пользователя в текстовом формате, а значением список из названия цвета и функции =)
 color_figure = {0: "red", 1: "orange", 2: "yellow", 3: "green", 4: "cyan", 5: "blue", 6: "purple"}
 
 color_list = (
@@ -66,6 +67,9 @@ color_list = (
     sd.COLOR_PURPLE
 )
 
+# TODO, для запроса корректного ввода пользователя, предлагаю реализовать цикл while True.
+#  Если ввод пользователя есть в словаре, создаём переменную с цветом и выходим из цикла =)
+#  Проверить наличие ключа в словаре можно при помощи "in" =)
 print('Возможные цвета:')
 
 for key, value in color_figure.items():

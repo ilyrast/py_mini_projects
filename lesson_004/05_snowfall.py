@@ -20,6 +20,14 @@ x_coord = []
 length = []
 coord = {}
 
+
+# TODO, предлагаю изменить способ хранения снежинок, объединив данные из списков в массив. Пример:
+#  Список списков снежинок:
+#  example_snow_list = [["x", "y", "длина лучей"], ["x", "y", "длина лучей"], ["x", "y", "длина лучей"]]
+
+
+
+# TODO, или просто range(N)
 for i in range(0, N, 1):
     x = sd.random_number(10, sd.resolution[0])
     x_coord.append(x)
@@ -37,6 +45,7 @@ while True:
         sd.snowflake(center=point, length=length[i])
         coord.update({coord_x: coord_y - 10})
         i += 1
+    # TODO, если снежинка упала, перезапускаем её, меняя координату "y", таким образом, снегопад получится бесконечным =)
     if coord_y < 10:
         break
     sd.sleep(0.1)
