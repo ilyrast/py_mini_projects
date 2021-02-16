@@ -16,15 +16,32 @@ N = 20
 # sd.sleep()
 # sd.random_number()
 # sd.user_want_exit()
+x_coord = []
+length = []
+coord = {}
 
+for i in range(0, N, 1):
+    x = sd.random_number(10, sd.resolution[0])
+    x_coord.append(x)
+    coord.update({x_coord[i]: sd.resolution[1] - 10})
+    len_i = sd.random_number(10, 100)
+    while length.count(len_i) == True:
+        len_i = sd.random_number(10, 100)
+    length.append(len_i)
 
 while True:
     sd.clear_screen()
-    # TODO здесь ваш код
+    i = 0
+    for coord_x, coord_y in coord.items():
+        point = sd.get_point(coord_x, coord_y)
+        sd.snowflake(center=point, length=length[i])
+        coord.update({coord_x: coord_y - 10})
+        i += 1
+    if coord_y < 10:
+        break
     sd.sleep(0.1)
     if sd.user_want_exit():
         break
-sd.pause()
 
 # Примерный алгоритм отрисовки снежинок
 #   навсегда
