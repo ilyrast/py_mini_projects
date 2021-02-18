@@ -45,24 +45,37 @@ print("Возможные фигуры:")
 
 # TODO, предлагаю объединить словарь и список в один массив.
 #  Ключём будет ввод пользователя в текстовом формате, а значением список из названия фигур и функции =)
-figure = {0: "Треугольник", 1: "Квадрат", 2: "Пятиугольник", 3: "Шестиугольник"}
+figure = {
+    0: ("Треугольник", triangle),
+    1: ("Квадрат", square),
+    2: ("Пятиугольник", pentagon),
+    3: ("Шестиугольник", hexagon)
+}
 
-figure_list = (triangle, square, pentagon, hexagon)
+length = 100
 
+middle_point = sd.get_point(sd.resolution[0] / 2 - length / 2, sd.resolution[1] / 2 - length / 2)
 # TODO, для запроса корректного ввода пользователя, предлагаю реализовать цикл while True.
 #  Если ввод пользователя есть в словаре, создаём переменную с цветом и выходим из цикла =)
 #  Проверить наличие ключа в словаре можно при помощи "in" =)
 for key, value in figure.items():
-    print(key, ':', value)
+    print(key, ':', value[0])
 
-number = input()
-number = int(number)
+while True:
+    number = input()
+    number = int(number)
+    if number in figure.keys():
+        figure.get(number)[1](point=middle_point, angle=0, length=length)
+    else:
+        print('Введите корректный номер')
+    break
 
-if number > 3 or number < 0:
-    print('Неверный номер')
+# number = input()
+# number = int(number)
+#
+# if number > 3 or number < 0:
+#     print('Неверный номер')
 
-length = 100
-middle_point = sd.get_point(sd.resolution[0]/2 - length/2, sd.resolution[1]/2 - length/2)
-figure_list[number](point=middle_point, angle=0, length=length)
+
 
 sd.pause()

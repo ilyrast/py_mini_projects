@@ -53,22 +53,15 @@ def hexagon(point, angle, length, color):
         v.draw(color=color)
         new_point = v.end_point
 
-
-# TODO, предлагаю объединить словарь и список в один массив.
-#  Ключём будет ввод пользователя в текстовом формате, а значением список из названия цвета и функции =)
 color_figure = {
     0: ("red", sd.COLOR_RED),
     1: ("orange", sd.COLOR_ORANGE),
     2: ("yellow", sd.COLOR_YELLOW),
     3: ("green", sd.COLOR_GREEN),
-    4: ("cyan", sd.COLOR_YELLOW),
+    4: ("cyan", sd.COLOR_CYAN),
     5: ("blue", sd.COLOR_BLUE),
     6: ("purple", sd.COLOR_PURPLE)
 }
-
-# TODO, для запроса корректного ввода пользователя, предлагаю реализовать цикл while True.
-#  Если ввод пользователя есть в словаре, создаём переменную с цветом и выходим из цикла =)
-#  Проверить наличие ключа в словаре можно при помощи "in" =)
 
 print('Возможные цвета:')
 
@@ -80,14 +73,12 @@ while True:                 # Прошу объяснить зачем надо 
     number = int(number)
 
     if number in color_figure.keys():
-        color = color_figure.get(number)[1]
+        triangle(point=point_triangle, angle=0, length=100, color=color_figure.get(number)[1])
+        square(point=point_squad, angle=0, length=100, color=color_figure.get(number)[1])
+        pentagon(point=point_pentagon, angle=0, length=100, color=color_figure.get(number)[1])
+        hexagon(point_hexagon, angle=0, length=100, color=color_figure.get(number)[1])
     else:
         print('Введите корректный номер')
-
-    triangle(point=point_triangle, angle=0, length=100, color=color)
-    square(point=point_squad, angle=0, length=100, color=color)
-    pentagon(point=point_pentagon, angle=0, length=100, color=color)
-    hexagon(point_hexagon, angle=0, length=100, color=color)
 
     break
 
