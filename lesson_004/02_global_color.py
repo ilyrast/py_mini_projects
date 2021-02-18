@@ -53,37 +53,42 @@ def hexagon(point, angle, length, color):
         v.draw(color=color)
         new_point = v.end_point
 
+
 # TODO, предлагаю объединить словарь и список в один массив.
 #  Ключём будет ввод пользователя в текстовом формате, а значением список из названия цвета и функции =)
-color_figure = {0: "red", 1: "orange", 2: "yellow", 3: "green", 4: "cyan", 5: "blue", 6: "purple"}
-
-color_list = (
-    sd.COLOR_RED,
-    sd.COLOR_ORANGE,
-    sd.COLOR_YELLOW,
-    sd.COLOR_GREEN,
-    sd.COLOR_CYAN,
-    sd.COLOR_BLUE,
-    sd.COLOR_PURPLE
-)
+color_figure = {
+    0: ("red", sd.COLOR_RED),
+    1: ("orange", sd.COLOR_ORANGE),
+    2: ("yellow", sd.COLOR_YELLOW),
+    3: ("green", sd.COLOR_GREEN),
+    4: ("cyan", sd.COLOR_YELLOW),
+    5: ("blue", sd.COLOR_BLUE),
+    6: ("purple", sd.COLOR_PURPLE)
+}
 
 # TODO, для запроса корректного ввода пользователя, предлагаю реализовать цикл while True.
 #  Если ввод пользователя есть в словаре, создаём переменную с цветом и выходим из цикла =)
 #  Проверить наличие ключа в словаре можно при помощи "in" =)
+
 print('Возможные цвета:')
 
 for key, value in color_figure.items():
-    print(key, ':', value)
-number = input()
-number = int(number)
+    print(key, ':', value[0])
 
-if number > 6 or number < 0:
-    print('Неверный номер')
+while True:                 # Прошу объяснить зачем надо делать бесконечный цикл, программа же и без него работает
+    number = input()
+    number = int(number)
 
-triangle(point=point_triangle, angle=0, length=100, color=color_list[number])
-square(point=point_squad, angle=0, length=100, color=color_list[number])
-pentagon(point=point_pentagon, angle=0, length=100, color=color_list[number])
-hexagon(point_hexagon, angle=0, length=100, color=color_list[number])
+    if number in color_figure.keys():
+        color = color_figure.get(number)[1]
+    else:
+        print('Введите корректный номер')
 
+    triangle(point=point_triangle, angle=0, length=100, color=color)
+    square(point=point_squad, angle=0, length=100, color=color)
+    pentagon(point=point_pentagon, angle=0, length=100, color=color)
+    hexagon(point_hexagon, angle=0, length=100, color=color)
+
+    break
 
 sd.pause()

@@ -25,10 +25,7 @@ coord = {}
 #  Список списков снежинок:
 #  example_snow_list = [["x", "y", "длина лучей"], ["x", "y", "длина лучей"], ["x", "y", "длина лучей"]]
 
-
-
-# TODO, или просто range(N)
-for i in range(0, N, 1):
+for i in range(N):
     x = sd.random_number(10, sd.resolution[0])
     x_coord.append(x)
     coord.update({x_coord[i]: sd.resolution[1] - 10})
