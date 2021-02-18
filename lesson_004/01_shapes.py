@@ -37,10 +37,10 @@ sd.resolution = (1200, 600)
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
-point_triangle = sd.get_point(100, 150)
-point_squad = sd.get_point(600, 150)
-point_pentagon = sd.get_point(100, 400)
-point_hexagon = sd.get_point(600, 400)
+# point_triangle = sd.get_point(100, 150)
+# point_squad = sd.get_point(600, 150)
+# point_pentagon = sd.get_point(100, 400)
+# point_hexagon = sd.get_point(600, 400)
 
 
 # def triangle(point, angle, length):
@@ -95,7 +95,7 @@ point_hexagon = sd.get_point(600, 400)
 #   - одна общая функция со множеством параметров,
 #   - все функции отрисовки треугольника/квадрата/етс берут 3 параметра и внутри себя ВЫЗЫВАЮТ общую функцию.
 #
-# Не забудте в этой общей функции придумать, как устранить разрыв в начальной/конечной точках рисуемой фигуры
+# Не забудьте в этой общей функции придумать, как устранить разрыв в начальной/конечной точках рисуемой фигуры
 # (если он есть. подсказка - на последней итерации можно использовать линию от первой точки)
 
 # Часть 2-бис.
@@ -116,8 +116,11 @@ def hexagon(point, angle, length):
     draw_fig(point=point, angle=angle, length=length, angle_step=60)
 
 def draw_fig (point, angle, length, angle_step):
+    # TODO, пожалуйста, обратите внимание, сейчас в каждой фигуре рисуем на одну сторону больше.
+    #  Предлагаю одним из параметров функции сделать "Количество сторон" и рассчитывать угол исходя из этого параметра =)
+    #  Рисовать на 1 линию меньше векторами и последнюю простой линией. Таким образом в больших фигурах избежим разрыва.
     new_point = point
-    for angle in range(angle + 0, angle + 361, angle_step):
+    for angle in range(angle + 0, angle + 361, angle_step):  # TODO + 0 лишний =)
         v = sd.get_vector(start_point=new_point, angle=angle, length=length, width=3)
         v.draw()
         new_point = v.end_point

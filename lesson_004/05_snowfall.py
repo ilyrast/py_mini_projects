@@ -21,6 +21,7 @@ snow_list = []
 for i in range(N):
     x = sd.random_number(10, sd.resolution[0])
     len_i = sd.random_number(1, 100)
+    # TODO, цикл while озможно лишний =)
     while snow_list.count(len_i) == True:
         len_i = sd.random_number(10, 100)
     snow_list.append([x, sd.resolution[1] - 10, len_i])
@@ -28,6 +29,7 @@ for i in range(N):
 while True:
     sd.clear_screen()
     j = 0
+    # TODO, если идти в цикле по списку с enumerate, то переменная j будет лишней =)
     for l_list in snow_list:
         coord_x, coord_y, length = l_list
         point = sd.get_point(coord_x, coord_y)
