@@ -103,24 +103,25 @@ sd.resolution = (1200, 600)
 # Поэтому среди программистов есть принцип D.R.Y. https://clck.ru/GEsA9
 # Будьте ленивыми, не используйте копи-пасту!
 
-def triangle(point, angle, length):
-    draw_fig(point=point, angle=angle, length=length, angle_step=120)
+# def triangle(point, angle, sides, length):
+#     draw_fig(point=point, angle=angle, length=100, sides=sides)
+#
+# def square(point, angle, length):
+#     draw_fig(point=point, angle=angle, length=100, sides=sides)
+#
+# def pentagon(point, angle, length):
+#     draw_fig(point=point, angle=angle, length=100, sides=sides)
+#
+# def hexagon(point, angle, length):
+#     draw_fig(point=point, angle=angle, length=100, sides=sides)
 
-def square(point, angle, length):
-    draw_fig(point=point, angle=angle, length=length, angle_step=90)
-
-def pentagon(point, angle, length):
-    draw_fig(point=point, angle=angle, length=length, angle_step=72)
-
-def hexagon(point, angle, length):
-    draw_fig(point=point, angle=angle, length=length, angle_step=60)
-
-def draw_fig (point, angle, length, angle_step):
+def draw_fig (point, angle, length, sides):
     # TODO, пожалуйста, обратите внимание, сейчас в каждой фигуре рисуем на одну сторону больше.
     #  Предлагаю одним из параметров функции сделать "Количество сторон" и рассчитывать угол исходя из этого параметра =)
     #  Рисовать на 1 линию меньше векторами и последнюю простой линией. Таким образом в больших фигурах избежим разрыва.
+    angle_step = int(360 / sides)
     new_point = point
-    for angle in range(angle + 0, angle + 361, angle_step):  # TODO + 0 лишний =)
+    for angle in range(angle, angle + 360, angle_step):
         v = sd.get_vector(start_point=new_point, angle=angle, length=length, width=3)
         v.draw()
         new_point = v.end_point
@@ -130,9 +131,6 @@ point_squad = sd.get_point(600, 150)
 point_pentagon = sd.get_point(100, 400)
 point_hexagon = sd.get_point(600, 400)
 
-triangle(point=point_triangle, angle=0, length=100)
-square(point=point_squad, angle=0, length=100)
-pentagon(point=point_pentagon, angle=0, length=100)
-hexagon(point_hexagon, angle=0, length=100)
+draw_fig(point=point_pentagon, angle=0, length=100, sides=5)
 
 sd.pause()
