@@ -43,39 +43,27 @@ def hexagon(point, angle, length):
 
 print("Возможные фигуры:")
 
-# TODO, предлагаю объединить словарь и список в один массив.
-#  Ключём будет ввод пользователя в текстовом формате, а значением список из названия фигур и функции =)
 figure = {
-    0: ("Треугольник", triangle),
-    1: ("Квадрат", square),
-    2: ("Пятиугольник", pentagon),
-    3: ("Шестиугольник", hexagon)
+    '0': ("Треугольник", triangle),
+    '1': ("Квадрат", square),
+    '2': ("Пятиугольник", pentagon),
+    '3': ("Шестиугольник", hexagon)
 }
 
 length = 100
 
 middle_point = sd.get_point(sd.resolution[0] / 2 - length / 2, sd.resolution[1] / 2 - length / 2)
-# TODO, для запроса корректного ввода пользователя, предлагаю реализовать цикл while True.
-#  Если ввод пользователя есть в словаре, создаём переменную с цветом и выходим из цикла =)
-#  Проверить наличие ключа в словаре можно при помощи "in" =)
+
 for key, value in figure.items():
     print(key, ':', value[0])
-
+number = input()
 while True:
-    number = input()
-    number = int(number)
-    if number in figure.keys():
-        figure.get(number)[1](point=middle_point, angle=0, length=length)
-    else:
+    if number not in figure.keys():
         print('Введите корректный номер')
-    break
-
-# number = input()
-# number = int(number)
-#
-# if number > 3 or number < 0:
-#     print('Неверный номер')
-
-
+        number = input()
+    else:
+        fig = figure.get(number)[1]
+        break
+fig(point=middle_point, angle=0, length=length)
 
 sd.pause()
