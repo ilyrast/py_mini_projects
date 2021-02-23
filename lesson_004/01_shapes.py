@@ -103,34 +103,23 @@ sd.resolution = (1200, 600)
 # Поэтому среди программистов есть принцип D.R.Y. https://clck.ru/GEsA9
 # Будьте ленивыми, не используйте копи-пасту!
 
-# def triangle(point, angle, sides, length):
-#     draw_fig(point=point, angle=angle, length=100, sides=sides)
-#
-# def square(point, angle, length):
-#     draw_fig(point=point, angle=angle, length=100, sides=sides)
-#
-# def pentagon(point, angle, length):
-#     draw_fig(point=point, angle=angle, length=100, sides=sides)
-#
-# def hexagon(point, angle, length):
-#     draw_fig(point=point, angle=angle, length=100, sides=sides)
-
 def draw_fig (point, angle, length, sides):
-    # TODO, пожалуйста, обратите внимание, сейчас в каждой фигуре рисуем на одну сторону больше.
-    #  Предлагаю одним из параметров функции сделать "Количество сторон" и рассчитывать угол исходя из этого параметра =)
-    #  Рисовать на 1 линию меньше векторами и последнюю простой линией. Таким образом в больших фигурах избежим разрыва.
     angle_step = int(360 / sides)
     new_point = point
-    for angle in range(angle, angle + 360, angle_step):
+    for angle in range(angle, 360 - angle_step, angle_step):
         v = sd.get_vector(start_point=new_point, angle=angle, length=length, width=3)
         v.draw()
         new_point = v.end_point
+    sd.line(new_point, point, width=3)
 
 point_triangle = sd.get_point(100, 150)
 point_squad = sd.get_point(600, 150)
 point_pentagon = sd.get_point(100, 400)
 point_hexagon = sd.get_point(600, 400)
 
+draw_fig(point=point_triangle, angle=0, length=100, sides=3)
+draw_fig(point=point_squad, angle=0, length=100, sides=4)
 draw_fig(point=point_pentagon, angle=0, length=100, sides=5)
+draw_fig(point=point_hexagon, angle=0, length=100, sides=6)
 
 sd.pause()
