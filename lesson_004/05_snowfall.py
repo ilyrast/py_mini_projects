@@ -21,6 +21,7 @@ len_compare = []
 for i in range(N):
     x = sd.random_number(10, sd.resolution[0])
     len_i = sd.random_number(10, 100)
+    # TODO переменная len_compare и цикл получились лишними =)
     while len_compare.count(len_i) == True:
         len_i = sd.random_number(10, 100)
     len_compare.append(len_i)
@@ -28,7 +29,10 @@ for i in range(N):
 
 while True:
     sd.clear_screen()
+    # TODO в цикле по списку c enumerate правильно так
+    #  for index, element in ...
     for l_list in enumerate(snow_list):
+        # TODO, переменная id лишняя =)
         id, coord_x, coord_y, length = l_list[0], *l_list[1]
         print(id, coord_x, coord_y, length)
         point = sd.get_point(coord_x, coord_y)

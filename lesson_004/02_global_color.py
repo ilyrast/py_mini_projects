@@ -79,10 +79,11 @@ while True:
         color = color_figure.get(number)[1]
         break
 
-
 triangle(point=point_triangle, angle=0, length=100, color=color)
 square(point=point_squad, angle=0, length=100, color=color)
 pentagon(point=point_pentagon, angle=0, length=100, color=color)
 hexagon(point_hexagon, angle=0, length=100, color=color)
 
 sd.pause()
+
+# зачёт!

@@ -3,6 +3,8 @@
 import simple_draw as sd
 
 sd.resolution = (1200, 600)
+
+
 # Часть 1.
 # Написать функции рисования равносторонних геометрических фигур:
 # - треугольника
@@ -103,7 +105,7 @@ sd.resolution = (1200, 600)
 # Поэтому среди программистов есть принцип D.R.Y. https://clck.ru/GEsA9
 # Будьте ленивыми, не используйте копи-пасту!
 
-def draw_fig (point, angle, length, sides):
+def draw_fig(point, angle, length, sides):
     angle_step = int(360 / sides)
     new_point = point
     for angle in range(angle, 360 - angle_step, angle_step):
@@ -111,6 +113,7 @@ def draw_fig (point, angle, length, sides):
         v.draw()
         new_point = v.end_point
     sd.line(new_point, point, width=3)
+
 
 point_triangle = sd.get_point(100, 150)
 point_squad = sd.get_point(600, 150)
@@ -123,3 +126,4 @@ draw_fig(point=point_pentagon, angle=0, length=100, sides=5)
 draw_fig(point=point_hexagon, angle=0, length=100, sides=6)
 
 sd.pause()
+# зачёт!

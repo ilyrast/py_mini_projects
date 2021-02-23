@@ -2,6 +2,7 @@
 
 import simple_draw as sd
 
+
 def triangle(point, angle, length):
     new_point = point
     for angle in range(angle + 0, angle + 361, 120):
@@ -67,3 +68,5 @@ while True:
 fig(point=middle_point, angle=0, length=length)
 
 sd.pause()
+
+# зачёт!
