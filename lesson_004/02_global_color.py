@@ -53,14 +53,15 @@ def hexagon(point, angle, length, color):
         v.draw(color=color)
         new_point = v.end_point
 
+
 color_figure = {
-    0: ("red", sd.COLOR_RED),
-    1: ("orange", sd.COLOR_ORANGE),
-    2: ("yellow", sd.COLOR_YELLOW),
-    3: ("green", sd.COLOR_GREEN),
-    4: ("cyan", sd.COLOR_CYAN),
-    5: ("blue", sd.COLOR_BLUE),
-    6: ("purple", sd.COLOR_PURPLE)
+    '0': ("red", sd.COLOR_RED),
+    '1': ("orange", sd.COLOR_ORANGE),
+    '2': ("yellow", sd.COLOR_YELLOW),
+    '3': ("green", sd.COLOR_GREEN),
+    '4': ("cyan", sd.COLOR_CYAN),
+    '5': ("blue", sd.COLOR_BLUE),
+    '6': ("purple", sd.COLOR_PURPLE)
 }
 
 print('Возможные цвета:')
@@ -68,24 +69,25 @@ print('Возможные цвета:')
 for key, value in color_figure.items():
     print(key, ':', value[0])
 
+number = input()
 # TODO, цикл необходим для контроля ввода.
 #  Если пользователь ввёл некорректное число, просим ввести заново.
 #  Предлагаю в цикле создавать переменную с цветом. А рисовать уже после того, как выйдем из цикла.
 #  Пока что, если ввести текст, код выдаёт ошибку. Предлагаю не приводить ввод пользователя к числу.
 #  Как в таком случае изменятся ключи словаря?
 
-while True:                 # Прошу объяснить зачем надо делать бесконечный цикл, программа же и без него работает
-    number = input()
-    number = int(number)
-
-    if number in color_figure.keys():
-        triangle(point=point_triangle, angle=0, length=100, color=color_figure.get(number)[1])
-        square(point=point_squad, angle=0, length=100, color=color_figure.get(number)[1])
-        pentagon(point=point_pentagon, angle=0, length=100, color=color_figure.get(number)[1])
-        hexagon(point_hexagon, angle=0, length=100, color=color_figure.get(number)[1])
-    else:
+while True:
+    if number not in color_figure.keys():
         print('Введите корректный номер')
+        number = input()
+    else:
+        color = color_figure.get(number)[1]
+        break
 
-    break
+
+triangle(point=point_triangle, angle=0, length=100, color=color)
+square(point=point_squad, angle=0, length=100, color=color)
+pentagon(point=point_pentagon, angle=0, length=100, color=color)
+hexagon(point_hexagon, angle=0, length=100, color=color)
 
 sd.pause()
