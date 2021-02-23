@@ -86,11 +86,7 @@ while True:
         sd.snowflake(center=point, length=length, color=sd.background_color)
         if coord_y < 10:
             sd.snowflake(center=point, length=length)
-            # TODO, не стоит менять список, по которому идём в цикле, можем получить непредсказуемое поведение кода.
-            #  Предлагаю просто менять элементы списка l_list[0], l_list[1] и т.д.
-            #  Как мы делаем это при смене координат.
-            snow_list.pop(index)
-            snow_list.append([
+            snow_list[index] = ([
                 sd.random_number(10, sd.resolution[0]),
                 sd.random_number(sd.resolution[1] - 50, sd.resolution[1]),
                 sd.random_number(10, 35)
