@@ -7,7 +7,7 @@ import simple_draw as sd
 # - нарисовать падение этих N снежинок
 # - создать список рандомных длин лучей снежинок (от 10 до 100) и пусть все снежинки будут разные
 
-N = 20
+N = 5
 
 # Пригодятся функции
 # sd.get_point()
@@ -23,7 +23,7 @@ N = 20
 # for i in range(N):
 #     x = sd.random_number(10, sd.resolution[0])
 #     len_i = sd.random_number(10, 100)
-#     # TODO переменная len_compare и цикл получились лишними =)
+#     #  переменная len_compare и цикл получились лишними =)
 #     # почему лишними? если убрать цикл, то не все длины будут раные
 #    #n_compare.append(len_i)
 #     snow_list.append([x, sd.resolution[1] - 10, len_i])
@@ -86,6 +86,9 @@ while True:
         sd.snowflake(center=point, length=length, color=sd.background_color)
         if coord_y < 10:
             sd.snowflake(center=point, length=length)
+            # TODO, не стоит менять список, по которому идём в цикле, можем получить непредсказуемое поведение кода.
+            #  Предлагаю просто менять элементы списка l_list[0], l_list[1] и т.д.
+            #  Как мы делаем это при смене координат.
             snow_list.pop(index)
             snow_list.append([
                 sd.random_number(10, sd.resolution[0]),
