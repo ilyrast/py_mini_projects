@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import simple_draw as sd
-
+# from .rainbow import rainbow
 # На основе кода из практической части реализовать снегопад:
 # - создать списки данных для отрисовки N снежинок
 # - нарисовать падение этих N снежинок
@@ -69,7 +69,7 @@ import simple_draw as sd
 #     если пользователь хочет выйти
 #       прервать цикл
 
-def snow (count, coord_start_x, coord_end_x, coord_start_y, coord_end_y):
+def snow_rain (count, coord_start_x, coord_end_x, coord_start_y, coord_end_y, x_rain, y_rain, radius, width):
 
     snow_list = []
 
@@ -78,6 +78,12 @@ def snow (count, coord_start_x, coord_end_x, coord_start_y, coord_end_y):
         y = sd.random_number(coord_start_y, coord_end_y)
         len_i = sd.random_number(15, 20)
         snow_list.append([x, y, len_i])
+
+    rainbow_colors = [sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
+                      sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE]
+    y_list = []
+    for y_rain in range(y_rain, y_rain + 210, 30):
+        y_list.append(y_rain)
 
     while True:
         sd.start_drawing()
@@ -97,6 +103,14 @@ def snow (count, coord_start_x, coord_end_x, coord_start_y, coord_end_y):
                 snow_list[index] = ([coord_x + deviation, coord_y - 10, length])
                 point_1 = sd.get_point(coord_x + deviation, coord_y - 10)
                 sd.snowflake(center=point_1, length=length)
+        # rainbow(x=x_rain, y=y_rain, radius=radius, width=width)
+            for index, color in enumerate(rainbow_colors):
+                point = sd.get_point(x_rain, y_list[index])
+                sd.circle(center_position=point, radius=radius, color=color, width=width)
+                if index + 1 == 7:
+                    rainbow_colors[index] = rainbow_colors[0]
+                else:
+                    rainbow_colors[index] = rainbow_colors[index + 1]
         sd.finish_drawing()
         sd.sleep(0.1)
         if sd.user_want_exit():

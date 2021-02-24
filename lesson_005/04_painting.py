@@ -20,9 +20,8 @@
 
 import simple_draw as sd
 from paint_func.wall import wall
-from paint_func.snowfall import snow
+from paint_func.snowfall import snow_rain
 from paint_func.fractal import draw_branches
-from paint_func.rainbow import rainbow
 from paint_func.smile import smile
 from paint_func.sun import sun
 
@@ -61,8 +60,6 @@ wall(x_start=300, x_end=650, y_start=80, y_end=380, color=sd.COLOR_YELLOW)  # С
 
 sd.polygon(point_list=point_list_1, color=sd.COLOR_RED, width=0)  # Крыша
 
-rainbow(350, -200, radius=1100, width=30)  # Радуга
-
 sun(position=sun_position, radius=50)  # Солнце
 
 smile(1100, 230, sd.COLOR_DARK_YELLOW)  # Голова
@@ -74,9 +71,15 @@ sd.line(start_point=body_hands, end_point=right_hand, color=sd.COLOR_DARK_YELLOW
 
 draw_branches(point=root_point, angle=90, length=70)  # Дерево
 
-snow(count=10, coord_start_x=10, coord_end_x=180, coord_start_y=450, coord_end_y=700)  # Снегопад
-
-
+snow_rain(count=10,
+          coord_start_x=10,
+          coord_end_x=180,
+          coord_start_y=450,
+          coord_end_y=700,                      # Снегопад + Радуга
+          x_rain=350,
+          y_rain=-200,
+          radius=1100,
+          width=30)
 
 sd.pause()
 # Усложненное задание (делать по желанию)
