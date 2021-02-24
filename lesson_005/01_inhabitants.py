@@ -9,4 +9,4 @@ from room_2 import folks as f1
 print('В комнате room_1 живут:', ', '.join(folks))
 print('В комнате room_2 живёт', ''.join(f1))
 
-
+# зачёт!

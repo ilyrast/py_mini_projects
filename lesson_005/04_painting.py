@@ -29,6 +29,8 @@ sd.resolution = (1200, 800)
 
 point_list_1 = []
 
+# TODO, пожалуйста, перенесите весь код для отрисовки домика в один модуль.
+#  Создайте 1 функцию, которая будет рисовать домик, импортируйте в этот модуль и запустите =)
 point_list_1.append(sd.get_point(230, 380))
 point_list_1.append(sd.get_point(475, 480))
 point_list_1.append(sd.get_point(720, 380))
@@ -62,6 +64,8 @@ sd.polygon(point_list=point_list_1, color=sd.COLOR_RED, width=0)  # Крыша
 
 sun(position=sun_position, radius=50)  # Солнце
 
+# TODO, предлагаю человечка рисовать одной функцией в модуле, где рисуем голову.
+#  импортируем в этот модуль и запустим только функцию "человечек" =)
 smile(1100, 230, sd.COLOR_DARK_YELLOW)  # Голова
 sd.line(start_point=left_leg, end_point=body_low, color=sd.COLOR_DARK_YELLOW, width=1)  # Левая нога
 sd.line(start_point=right_leg, end_point=body_low, color=sd.COLOR_DARK_YELLOW, width=1)  # Правая нога
