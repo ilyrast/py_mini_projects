@@ -3,4 +3,10 @@
 # Вывести на консоль жителей комнат (модули room_1 и room_2)
 # Формат: В комнате room_1 живут: ...
 
-# TODO здесь ваш код
+from room_1 import folks
+from room_2 import folks as f1
+
+print('В комнате room_1 живут:', ', '.join(folks))
+print('В комнате room_2 живёт', ''.join(f1))
+
+
