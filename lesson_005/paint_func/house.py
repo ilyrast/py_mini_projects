@@ -2,12 +2,19 @@
 
 import simple_draw as sd
 from .wall import wall
-def house(start_point, end_point, end_point_1):
+def house():
     point_list_1 = []
 
     point_list_1.append(sd.get_point(230, 380))
     point_list_1.append(sd.get_point(475, 480))
     point_list_1.append(sd.get_point(720, 380))
+    left_bot = sd.get_point(0, 0)
+    right_top = sd.get_point(1200, 80)
+    start_point = sd.get_point(250, 80)
+    end_point = sd.get_point(700, 80)
+    end_point_1 = sd.get_point(700, 380)
+
+    sd.rectangle(left_bottom=left_bot, right_top=right_top, color=sd.COLOR_DARK_ORANGE, width=0)  # Земля
 
     v1 = sd.vector(start=start_point, angle=90, length=300, color=sd.COLOR_YELLOW, width=2)
     v2 = sd.vector(start=end_point, angle=90, length=300, color=sd.COLOR_YELLOW, width=2)

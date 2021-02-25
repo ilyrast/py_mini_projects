@@ -69,8 +69,16 @@ import simple_draw as sd
 #     если пользователь хочет выйти
 #       прервать цикл
 
-def snow_rain (count, coord_start_x, coord_end_x, coord_start_y, coord_end_y, x_rain, y_rain, radius, width):
-
+def snow_rain ():
+    count = 10
+    coord_start_x = 10
+    coord_end_x = 180
+    coord_start_y = 450
+    coord_end_y = 700
+    x_rain = 350
+    y_rain = -200
+    radius = 1100
+    width = 30
     snow_list = []
 
     for i in range(count):

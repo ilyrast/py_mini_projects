@@ -59,6 +59,7 @@ import simple_draw as sd
 # sd.random_number()
 
 def draw_branches(point, angle, length):
+
     if length < 5:
         return
     v = sd.get_vector(start_point=point, angle=angle, length=length, width=1)
