@@ -3,7 +3,7 @@
 # (определение функций)
 import simple_draw as sd
 
-def chel(x_coord, y_coord, color):
+def chel(x_coord = 1100, y_coord = 230, color = sd.COLOR_DARK_YELLOW):
     left_leg = sd.get_point(1050, 80)
     right_leg = sd.get_point(1150, 80)
     body_low = sd.get_point(1100, 130)

@@ -17,10 +17,23 @@
 #  - справа в небе - радуга, слева - солнце (весна же!)
 # пример см. lesson_005/results/04_painting.jpg
 # Приправить своей фантазией по вкусу (коты? коровы? люди? трактор? что придумается)
-from paint_func.draw_pic import draw_pic
 
-draw_pic()
 
+import simple_draw as sd
+from paint_func.house import house
+from paint_func.snowfall import snow_rain
+from paint_func.fractal import draw_branches
+from paint_func.smile import chel
+from paint_func.sun import sun
+
+sd.resolution = (1200, 800)
+
+sun()
+house()
+chel()
+draw_branches()
+snow_rain()
+sd.pause()
 
 
 # Усложненное задание (делать по желанию)
