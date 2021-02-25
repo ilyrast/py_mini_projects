@@ -11,13 +11,9 @@ from district.central_street.house2.room1 import folks as f2
 from district.central_street.house2.room2 import folks as f3
 s = ', '
 name_list = []
-# TODO, а как добавить все элементы одного списка в другой за один списковый метод без цикла? =)
-for index, name in enumerate(f0):
-    name_list.append(name)
-for index, name in enumerate(f1):
-    name_list.append(name)
-for index, name in enumerate(f2):
-    name_list.append(name)
-for index, name in enumerate(f3):
-    name_list.append(name)
+
+name_list.extend(f0)
+name_list.extend(f1)
+name_list.extend(f2)
+name_list.extend(f3)
 print('На районе живут:', s.join(name_list))

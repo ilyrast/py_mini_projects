@@ -21,12 +21,12 @@ import my_burger as mb
 #  Давайте придумаем названия нашим функциям так, чтобы они отражали сущность функций. К примеру, "добавить_сыр".
 
 
-mb.bun()
-mb.ham()
-mb.cheese()
-mb.ham()
-mb.cheese()
-mb.cucumber()
-mb.tomato()
-mb.mayonnaise()
-mb.bun()
+mb.add_bun()
+mb.add_ham()
+mb.add_cheese()
+mb.add_ham()
+mb.add_cheese()
+mb.add_cucumber()
+mb.add_tomato()
+mb.add_mayonnaise()
+mb.add_bun()

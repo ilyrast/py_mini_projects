@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-def bun():
+def add_bun():
     print('А теперь добавим булочку')
 
-def ham():
+def add_ham():
     print('А теперь добавим котлету')
 
-def cucumber():
+def add_cucumber():
     print('А теперь добавим огурчик')
 
-def tomato():
+def add_tomato():
     print('А теперь добавим помидорчик')
 
-def mayonnaise():
+def add_mayonnaise():
     print('А теперь добавим майонез')
 
-def cheese():
+def add_cheese():
     print('А теперь добавим сыр')
