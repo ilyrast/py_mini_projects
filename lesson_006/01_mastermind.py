@@ -44,3 +44,36 @@
 # Это пример применения SOLID принципа (см https://goo.gl/GFMoaI) в архитектуре программ.
 # Точнее, в этом случае важен принцип единственной ответственности - https://goo.gl/rYb3hT
 
+
+from mastermind_engine import check_number
+from mastermind_engine import same_in_list
+
+inp_num_list = []
+
+
+
+while True:
+    number = input('Введите вариант числа:')
+    if len(number) != 4:
+        print('Число должно быть четырехзначным')
+    elif number.isdigit() == False:
+        print('Неправильный формат ввода')
+    elif (1000 <= int(number) <= 9999) == False:
+        print('Первым не должен быть 0')
+    else:
+        inp_num_list.append(int(number) // 1000)
+        inp_num_list.append(int(number) // 100 - int(number) // 1000 * 10)
+        inp_num_list.append(int(number) // 10 - int(number) // 100 * 10)
+        inp_num_list.append(int(number) - int(number) // 10 * 10)
+        if same_in_list(list_1=inp_num_list, list_2=inp_num_list) != 0:
+            print('Все цифры должны быть разные')
+            inp_num_list.clear()
+        else:
+            print(
+                'быки -', check_number(input_list=inp_num_list)[0],
+                'коровы -', check_number(input_list=inp_num_list)[1]
+                  )
+            inp_num_list.clear()
+
+
+
