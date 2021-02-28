@@ -27,3 +27,4 @@ name_list.extend(f6)
 name_list.extend(f7)
 
 print('На районе живут:', s.join(name_list))
+# зачёт!
