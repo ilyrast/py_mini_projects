@@ -25,6 +25,8 @@ from paint_func.snowfall import snow_rain
 from paint_func.fractal import draw_branches
 from paint_func.smile import chel
 from paint_func.sun import sun
+from paint_func.rainbow import rainbow
+from paint_func.smile_1 import smile as sm
 
 sd.resolution = (1200, 800)
 
@@ -32,8 +34,10 @@ sun()
 house()
 chel()
 draw_branches()
+sm()
+rainbow()
 snow_rain()
-# TODO, пожалуйста добавьте функцию с радугой в этот код и смайлик в окошко домика =)
+
 sd.pause()
 
 

@@ -23,4 +23,8 @@ def house():
 
     wall(x_start=300, x_end=650, y_start=80, y_end=380, color=sd.COLOR_YELLOW)
 
+    sd.square(left_bottom=sd.get_point(400, 145), side=150, color=sd.background_color, width=0)
+
+    sd.square(left_bottom=sd.get_point(400, 145), side=150, color=sd.COLOR_YELLOW, width=2)
+
     sd.polygon(point_list=point_list_1, color=sd.COLOR_RED, width=0)

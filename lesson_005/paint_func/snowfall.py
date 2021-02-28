@@ -75,10 +75,6 @@ def snow_rain ():
     coord_end_x = 180
     coord_start_y = 450
     coord_end_y = 700
-    x_rain = 350
-    y_rain = -200
-    radius = 1100
-    width = 30
     snow_list = []
 
     for i in range(count):
@@ -86,12 +82,6 @@ def snow_rain ():
         y = sd.random_number(coord_start_y, coord_end_y)
         len_i = sd.random_number(15, 20)
         snow_list.append([x, y, len_i])
-
-    rainbow_colors = [sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
-                      sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE]
-    y_list = []
-    for y_rain in range(y_rain, y_rain + 210, 30):
-        y_list.append(y_rain)
 
     while True:
         sd.start_drawing()
@@ -111,14 +101,6 @@ def snow_rain ():
                 snow_list[index] = ([coord_x + deviation, coord_y - 10, length])
                 point_1 = sd.get_point(coord_x + deviation, coord_y - 10)
                 sd.snowflake(center=point_1, length=length)
-        # rainbow(x=x_rain, y=y_rain, radius=radius, width=width)
-            for index, color in enumerate(rainbow_colors):
-                point = sd.get_point(x_rain, y_list[index])
-                sd.circle(center_position=point, radius=radius, color=color, width=width)
-                if index + 1 == 7:
-                    rainbow_colors[index] = rainbow_colors[0]
-                else:
-                    rainbow_colors[index] = rainbow_colors[index + 1]
         sd.finish_drawing()
         sd.sleep(0.1)
         if sd.user_want_exit():
