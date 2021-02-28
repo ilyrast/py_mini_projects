@@ -57,14 +57,19 @@ while True:
     step_counter = 0
     inp_num_list.clear()
     while True:
+        # TODO, запрос ввода пользователя и проверку числа предлагаю реализовать отдельной функцией,
+        #  для сокращения количества кода в этом цикле.
         number = input('Введите вариант числа:')
         if len(number) != 4:
             print('Число должно быть четырехзначным')
-        elif number.isdigit() == False:
+        elif number.isdigit() == False:  # TODO, лучше "elif not ..." вместо "== False"
             print('Неправильный формат ввода')
+        # TODO, возможно, будет проще проверять длину number? условие получится чуть короче =)
         elif (1000 <= int(number) <= 9999) == False:
             print('Первым не должен быть 0')
         else:
+            # TODO, возможно стоит просто проверять длину множества?)
+            #  В таком случае, строка кода будет 1 =)
             inp_num_list.append(int(number) // 1000)
             inp_num_list.append(int(number) // 100 - int(number) // 1000 * 10)
             inp_num_list.append(int(number) // 10 - int(number) // 100 * 10)
@@ -73,6 +78,7 @@ while True:
                 print('Все цифры должны быть разные')
                 inp_num_list.clear()
             else:
+                # TODO, предлагаю сократить количество вызово функции check_number до 1, присвоим её возврат переменным =)
                 print(
                     'быки -', check_number(input_list=inp_num_list)[0],
                     'коровы -', check_number(input_list=inp_num_list)[1]
