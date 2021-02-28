@@ -1,6 +1,6 @@
 import simple_draw as sd
 
-N = [4, 5, 8, 1]
+N = []
 
 def rand_number():
     for i in range(4):
@@ -10,19 +10,15 @@ def rand_number():
         N.append(j)
 
 def check_number(input_list):
-    # в цикле от 1 до 4
-    # if число на позиции [i] списка 1  = числу на позиции [i] списка 2
-    # увеличиваю переменную bulls
-    # elif число из списка 1 есть в списке 2
-    # увеличиваю переменную cows
-    # else вывожу пустой словарь
     bulls = 0
     cows = 0
     for i in range(4):
         if input_list[i] == N[i]:
             bulls += 1
-    cows = same_in_list(list_1=input_list, list_2=N)
-    return(bulls, cows)
+        if N.count(input_list[i]) != 0:
+            cows += 1
+    cows -= bulls
+    return (bulls, cows)
 
 def same_in_list(list_1, list_2):
     k = 0
@@ -32,3 +28,9 @@ def same_in_list(list_1, list_2):
                 k += 1
     return(k)
 
+def gameover(bulls):
+    if bulls == 4:
+        N.clear()
+        return True
+    else:
+        return False

@@ -47,33 +47,46 @@
 
 from mastermind_engine import check_number
 from mastermind_engine import same_in_list
+from mastermind_engine import gameover
+from mastermind_engine import rand_number
 
 inp_num_list = []
 
-
-
 while True:
-    number = input('Введите вариант числа:')
-    if len(number) != 4:
-        print('Число должно быть четырехзначным')
-    elif number.isdigit() == False:
-        print('Неправильный формат ввода')
-    elif (1000 <= int(number) <= 9999) == False:
-        print('Первым не должен быть 0')
-    else:
-        inp_num_list.append(int(number) // 1000)
-        inp_num_list.append(int(number) // 100 - int(number) // 1000 * 10)
-        inp_num_list.append(int(number) // 10 - int(number) // 100 * 10)
-        inp_num_list.append(int(number) - int(number) // 10 * 10)
-        if same_in_list(list_1=inp_num_list, list_2=inp_num_list) != 0:
-            print('Все цифры должны быть разные')
-            inp_num_list.clear()
+    rand_number()
+    step_counter = 0
+    inp_num_list.clear()
+    while True:
+        number = input('Введите вариант числа:')
+        if len(number) != 4:
+            print('Число должно быть четырехзначным')
+        elif number.isdigit() == False:
+            print('Неправильный формат ввода')
+        elif (1000 <= int(number) <= 9999) == False:
+            print('Первым не должен быть 0')
         else:
-            print(
-                'быки -', check_number(input_list=inp_num_list)[0],
-                'коровы -', check_number(input_list=inp_num_list)[1]
-                  )
-            inp_num_list.clear()
+            inp_num_list.append(int(number) // 1000)
+            inp_num_list.append(int(number) // 100 - int(number) // 1000 * 10)
+            inp_num_list.append(int(number) // 10 - int(number) // 100 * 10)
+            inp_num_list.append(int(number) - int(number) // 10 * 10)
+            if same_in_list(list_1=inp_num_list, list_2=inp_num_list) != 0:
+                print('Все цифры должны быть разные')
+                inp_num_list.clear()
+            else:
+                print(
+                    'быки -', check_number(input_list=inp_num_list)[0],
+                    'коровы -', check_number(input_list=inp_num_list)[1]
+                     )
+                step_counter += 1
+                if gameover(bulls=check_number(input_list=inp_num_list)[0]) == True:
+                    print("Количество ходов до победы:", step_counter)
+                    print("Хотите еще партию? (y/n)")
+                    if input() == 'y':
+                        break
+                    else:
+                        quit()
+                else:
+                    inp_num_list.clear()
 
 
 
