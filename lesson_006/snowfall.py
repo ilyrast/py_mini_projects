@@ -3,26 +3,34 @@
 import simple_draw as sd
 
 snow_list = []
-falled_snow_list =[]
+falled_snow_list = []
+
 
 def snow_create(N):
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
-
+    global snow_list
     for i in range(N):
         x = sd.random_number(10, sd.resolution[0])
         y = sd.random_number(sd.resolution[1] - 10, sd.resolution[1])
         len_i = sd.random_number(10, 35)
         snow_list.append([x, y, len_i])
 
-def snow_paint_background():
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
+
+def snow_paint():
+    global snow_list
     for index, l_list in enumerate(snow_list):
         coord_x, coord_y, length = l_list
         point = sd.get_point(coord_x, coord_y)
         sd.snowflake(center=point, length=length, color=sd.background_color)
+    deviation()
+    for index, l_list in enumerate(snow_list):
+        coord_x, coord_y, length = l_list
+        point_1 = sd.get_point(coord_x, coord_y)
+        sd.snowflake(center=point_1, length=length)
+
 
 def check_fall():
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
+    global snow_list
+    global falled_snow_list
     for index, l_list in enumerate(snow_list):
         coord_x, coord_y, length = l_list
         if coord_y < -15:
@@ -31,33 +39,19 @@ def check_fall():
             return False
         return True
 
-def snow_delete():
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
 
+def snow_delete():
+    global falled_snow_list
+    global snow_list
     count = len(falled_snow_list)
     for i in range(count):
         snow_list.pop(falled_snow_list[i])
     falled_snow_list.clear()
     return count
 
+
 def deviation():
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
-
+    global snow_list
     for index, l_list in enumerate(snow_list):
-        # TODO, можно не делать распаковку l_list, а менять координату сразу по срезу.
-        #  Получится на 1 строку кода меньше
-        coord_x, coord_y, length = l_list
         deviation = sd.random_number(-20, 20)
-        snow_list[index] = ([coord_x + deviation, coord_y - 10, length])
-
-
-def snow_paint():
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
-    # TODO Возможно стоит объединить с функцией snow_paint_background =)
-    for index, l_list in enumerate(snow_list):
-        coord_x, coord_y, length = l_list
-        point_1 = sd.get_point(coord_x, coord_y)
-        sd.snowflake(center=point_1, length=length)
-
-    # if sd.user_want_exit():
-    #     break
+        snow_list[index] = ([l_list[0] + deviation, l_list[1] - 10, l_list[2]])

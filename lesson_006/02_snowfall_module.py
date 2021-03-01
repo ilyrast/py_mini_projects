@@ -3,8 +3,6 @@
 import simple_draw as sd
 from snowfall import snow_create
 from snowfall import snow_paint
-from snowfall import snow_paint_background
-from snowfall import deviation
 from snowfall import check_fall
 from snowfall import snow_delete
 # На основе кода из lesson_004/05_snowfall.py
@@ -23,14 +21,11 @@ from snowfall import snow_delete
 snow_create(5)
 while True:
     sd.start_drawing()
-    snow_paint_background()
-    deviation()
     snow_paint()
-    if check_fall() == True:
+    if check_fall():
         snow_create(snow_delete())
     sd.finish_drawing()
     sd.sleep(0.1)
     if sd.user_want_exit():
         break
-
 sd.pause()
