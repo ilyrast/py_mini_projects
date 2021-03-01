@@ -1,33 +1,28 @@
 import simple_draw as sd
 
+Number_set = set()
 
-# TODO, пожалуйста, поправьте названия переменных ои одной буквы.
-#  Названия должны отражать суть их содержания =)
-
-N = []
 
 def rand_number():
-    # TODO, возможно сможем решить только 1 циклом while? =)
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
-    for i in range(4):
-        j = sd.random_number(1, 9)
-        while N.count(j) == True:
-            j = sd.random_number(1, 9)
-        N.append(j)
+    global Number_set
+    while len(Number_set) < 4:
+        Number_set.add(str(sd.random_number(1, 9)))
+    Number_set = list(Number_set)
 
-def check_number(input_list):
-    # TODO, если в функции используем глобальную переменную, обязательно об этом указываем в начале функции.
 
+def check_number(input_number):
+    global Number_set
     bulls = 0
     cows = 0
-    # TODO, было бы правильней идти в цикле по одному из чисел.
-    for i in range(4):
-        if input_list[i] == N[i]:
-            bulls += 1
-        if N.count(input_list[i]) != 0:
-            cows += 1
-    cows -= bulls
-    return (bulls, cows)
+    input_number = list(input_number)
+    for i in input_number:
+        if i in Number_set:
+            if Number_set.index(i) == input_number.index(i):
+                bulls += 1
+            else:
+                cows += 1
+    return bulls, cows
+
 
 def same_in_list(list_1, list_2):
     k = 0
@@ -35,11 +30,23 @@ def same_in_list(list_1, list_2):
         for j in range(i + 1, 4):
             if list_1[i] == list_2[j]:
                 k += 1
-    return(k)
+    return (k)
+
 
 def gameover(bulls):
     if bulls == 4:
-        N.clear()
+        Number_set.clear()
         return True
     else:
         return False
+
+
+def check_input(number):
+    if len(set(number)) != 4:
+        print('Число должно содержать четыре разные цифры ')
+    elif '0' in set(number):
+        print('Первым не должен быть 0')
+    elif not number.isdigit():
+        print('Неправильный формат ввода')
+    else:
+        return True
