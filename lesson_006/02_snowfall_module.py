@@ -5,6 +5,7 @@ from snowfall import snow_create
 from snowfall import snow_paint
 from snowfall import check_fall
 from snowfall import snow_delete
+from snowfall import deviation
 # На основе кода из lesson_004/05_snowfall.py
 # сделать модуль snowfall.py в котором реализовать следующие функции
 #  создать_снежинки(N) - создает N снежинок
@@ -21,9 +22,10 @@ from snowfall import snow_delete
 snow_create(5)
 while True:
     sd.start_drawing()
-    snow_paint()
-    if check_fall():
-        snow_create(snow_delete())
+    snow_paint(color=sd.background_color)
+    deviation()
+    snow_paint(color=sd.COLOR_WHITE)
+    snow_create(snow_delete(list=check_fall()))
     sd.finish_drawing()
     sd.sleep(0.1)
     if sd.user_want_exit():

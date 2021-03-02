@@ -18,7 +18,7 @@ def check_number(input_number):
     cows = 0
     input_number = list(input_number)
     # TODO, по первой переменной будет удобнее идти с enumerate =)
-    for i in input_number:
+    for index, i in enumerate(input_number):
         if i in Number_set:
             if Number_set.index(i) == input_number.index(i):
                 bulls += 1
