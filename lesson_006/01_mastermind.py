@@ -49,6 +49,7 @@ from mastermind_engine import check_number
 from mastermind_engine import gameover
 from mastermind_engine import rand_number
 from mastermind_engine import check_input
+from mastermind_engine import Number_list
 
 inp_num_list = []
 
@@ -61,6 +62,8 @@ while True:
         if not check_input(number):
             inp_num_list.clear()
         else:
+            print(Number_list)
+            print(list(number))
             bulls, cows = check_number(input_number=number)
             print('быки -', bulls, 'коровы -', cows)
             step_counter += 1
