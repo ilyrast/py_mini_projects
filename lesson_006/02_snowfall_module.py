@@ -6,6 +6,7 @@ from snowfall import snow_paint
 from snowfall import check_fall
 from snowfall import snow_delete
 from snowfall import deviation
+
 # На основе кода из lesson_004/05_snowfall.py
 # сделать модуль snowfall.py в котором реализовать следующие функции
 #  создать_снежинки(N) - создает N снежинок
@@ -25,9 +26,15 @@ while True:
     snow_paint(color=sd.background_color)
     deviation()
     snow_paint(color=sd.COLOR_WHITE)
+    # TODO, предлагаю создать переменную с возвратом функции check_fall.
+    #  Если ни одной снежинки не упало, значит нет смысла запускать остальные функции.
+    #  Можно будет добавить проверку с условным оператором. =)
+    #  Если упавшие снежинки есть, в таком случае удаляем их и создаём новые.
     snow_create(snow_delete(list=check_fall()))
     sd.finish_drawing()
     sd.sleep(0.1)
     if sd.user_want_exit():
         break
 sd.pause()
+
+

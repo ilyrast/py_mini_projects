@@ -10,6 +10,7 @@ def rand_number():
     while len(Number_set) < 4:
         Number_set.add(str(sd.random_number(0, 9)))
     Number_list = list(Number_set)
+    print(Number_list)
 
 
 def check_number(input_number):
@@ -35,13 +36,17 @@ def gameover(bulls):
 
 
 def check_input(number):
+    # TODO Введите вариант числа:29116 = число прошло.
+    #  НО, получили ошибку IndexError: list index out of range
+    #  Предлагаю запрашивать число пользователя в цикле while в этой функции и возвращать его только
+    #  В случае, если оно нам подходит.
     if len(set(number)) != 4:
         print('Число должно содержать четыре разные цифры ')
-    elif '0' in list(number)[0]:
+    elif '0' in list(number)[0]: # TODO, можно без list. Срезы применимы к строке =)
         print('Первым не должен быть 0')
     elif not number.isdigit():
         print('Неправильный формат ввода')
     else:
         return True
 
-rand_number()
+rand_number()  # TODO лишний запуск функции
