@@ -19,7 +19,7 @@ def check_number(input_number):
     input_number = list(input_number)
     for index, i in enumerate(input_number):
         if i in Number_list:
-            if index == Number_list[index]:
+            if i == Number_list[index]:
                 bulls += 1
             else:
                 cows += 1
