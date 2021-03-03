@@ -35,6 +35,8 @@ def check_fall():
 def snow_delete(list):
     global snow_list
     count = len(list)
+    # TODO, Если переменную цикла используем в коде, её необходимо назвать так, чтобы название отражало суть содержания.
+    #  "i" не отражает =)
     for i in list:
         snow_list.pop(list[i])
     falled_snow_list.clear()

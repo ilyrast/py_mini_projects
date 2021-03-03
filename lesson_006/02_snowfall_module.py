@@ -27,6 +27,8 @@ while True:
     deviation()
     snow_paint(color=sd.COLOR_WHITE)
     is_fall = check_fall()
+    # TODO, предлагаю использовать обратное условие. Можно просто "if is_fall"
+    #  получится на 2 строки кода меньше =)
     if is_fall == False:
         pass
     else:

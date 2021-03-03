@@ -18,6 +18,8 @@ def check_number(input_number):
     bulls = 0
     cows = 0
     input_number = list(input_number)
+    # TODO, Если переменную цикла используем в коде, её необходимо назвать так, чтобы название отражало суть содержания.
+    #  "i" не отражает =)
     for index, i in enumerate(input_number):
         if i in Number_list:
             if i == Number_list[index]:
