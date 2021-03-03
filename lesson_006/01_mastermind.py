@@ -57,22 +57,19 @@ while True:
     step_counter = 0
     inp_num_list.clear()
     while True:
-        number = input('Введите вариант числа:')
-        if not check_input(number):
-            inp_num_list.clear()
-        else:
-            bulls, cows = check_number(input_number=number)
-            print('быки -', bulls, 'коровы -', cows)
-            step_counter += 1
-            if gameover(bulls=bulls):
-                print("Количество ходов до победы:", step_counter)
-                print("Хотите еще партию? (y/n)")
-                if input() == 'y':
-                    break
-                else:
-                    quit()
+        number = check_input()
+        bulls, cows = check_number(input_number=number)
+        print('быки -', bulls, 'коровы -', cows)
+        step_counter += 1
+        if gameover(bulls=bulls):
+            print("Количество ходов до победы:", step_counter)
+            print("Хотите еще партию? (y/n)")
+            if input() == 'y':
+                break
             else:
-                inp_num_list.clear()
+                quit()
+
+
 
 
 
