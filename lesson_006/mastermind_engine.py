@@ -6,10 +6,10 @@ Number_list = []
 def rand_number():
     global Number_list
     Number_set = set()
-    Number_set.add(str(sd.random_number(1, 9)))
-    while len(Number_set) < 4:
+    Number_list.append(str(sd.random_number(1, 9)))
+    while len(Number_set) < 3:
         Number_set.add(str(sd.random_number(0, 9)))
-    Number_list = list(Number_set)
+    Number_list.extend(list(Number_set))
     print(Number_list)
 
 
@@ -18,11 +18,9 @@ def check_number(input_number):
     bulls = 0
     cows = 0
     input_number = list(input_number)
-    # TODO, Если переменную цикла используем в коде, её необходимо назвать так, чтобы название отражало суть содержания.
-    #  "i" не отражает =)
-    for index, i in enumerate(input_number):
-        if i in Number_list:
-            if i == Number_list[index]:
+    for index, number in enumerate(input_number):
+        if number in Number_list:
+            if number == Number_list[index]:
                 bulls += 1
             else:
                 cows += 1
