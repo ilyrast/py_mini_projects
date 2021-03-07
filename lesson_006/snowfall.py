@@ -3,7 +3,7 @@
 import simple_draw as sd
 
 snow_list = []
-falled_snow_list = []
+falled_snow_list = []  # переменная не глобальная =)
 
 
 def snow_create(N):
@@ -37,7 +37,7 @@ def snow_delete(list):
     count = len(list)
     for check in list:
         snow_list.pop(list[check])
-    falled_snow_list.clear()
+    falled_snow_list.clear()  # лишнее действие.
     return count
 
 

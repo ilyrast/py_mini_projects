@@ -66,9 +66,8 @@ while True:
             break
     print("Хотите еще партию? (y/n)")
     if input() == 'y':
-        continue
+        continue  # если условие сделать обратным, то continue получится лишним =)
     else:
         break
 
-
-
+# зачёт!
